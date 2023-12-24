@@ -6,8 +6,8 @@ body {
 }
 
 #board {
-    width: 540px;
-    height: 540px;
+    width: 270px;
+    height: 270px;
     /* background-color: green; */
 
     margin: 0 auto;
@@ -22,16 +22,16 @@ body {
 
 #board div {
     /* board = 540 x 540, divide into 3x3 tiles --> 180 x 180 per div */
-    width: 180px;
-    height: 180px;
+    width: 90px;
+    height: 90px;
     background-image: url("./pipe.png");
     background-size: cover;
 }
 
 #board div img {
     /* all img tags inside tiles */
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
 
     user-select: none;
     -moz-user-select: none;
