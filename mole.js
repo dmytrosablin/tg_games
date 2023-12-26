@@ -4,7 +4,6 @@ let score = 0;
 let gameOver = false;
 
 // TG
-let tg = window.Telegram.WebApp;
 
 
 window.onload = function() {
@@ -77,6 +76,8 @@ function selectTile() {
         document.getElementById("score").innerText = score.toString(); //update score html
     }
     else if (this == currPlantTile) {
+        let tg = window.Telegram.WebApp;
+
         document.getElementById("score").innerText = "GAME OVER " +tg.initDataUnsafe.user.first_name +" :" + score.toString(); //update score html
 
         gameOver = true;
