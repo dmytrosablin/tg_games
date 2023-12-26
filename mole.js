@@ -3,6 +3,10 @@ let currPlantTile;
 let score = 0;
 let gameOver = false;
 
+// TG
+let tg = window.Telegram.WebApp;
+
+
 window.onload = function() {
     setGame();
 }
@@ -73,7 +77,12 @@ function selectTile() {
         document.getElementById("score").innerText = score.toString(); //update score html
     }
     else if (this == currPlantTile) {
-        document.getElementById("score").innerText = "GAME OVER: " + score.toString(); //update score html
+        document.getElementById("score").innerText = "GAME OVER " +tg.initDataUnsafe.first_name +" :" + score.toString(); //update score html
+
         gameOver = true;
     }
 }
+
+
+//TELEGRAM
+

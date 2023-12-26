@@ -3,6 +3,7 @@ body {
     text-align: center;
     background: url("./mario-bg.jpg");
     background-size: cover;
+        
 }
 
 #board {
