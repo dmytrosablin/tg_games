@@ -77,6 +77,8 @@ function selectTile() {
     }
     else if (this == currPlantTile) {
         let tg = window.Telegram.WebApp;
+        let data = {score: score}
+        tg.sendData(JSON.stringify(data))
 
         document.getElementById("score").innerText = "GAME OVER " +tg.initDataUnsafe.user.first_name +" :" + score.toString(); //update score html
 
