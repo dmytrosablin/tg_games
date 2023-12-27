@@ -6,9 +6,7 @@ let gameOver = false;
 // TG
 
 const Http = new XMLHttpRequest()
-let url = `https://api.telegram.org/bot6480737039:AAFf475pQ3Pe2ESj1jZ1fqZxzrRIybUjKFg/sendMessage?chat_id=977619219&text=You scored ${score.toString()}`;
-Http.open("GET", url);
-Http.send();
+
 
 
 
@@ -82,17 +80,16 @@ function selectTile() {
         document.getElementById("score").innerText = score.toString(); //update score html
     }
     else if (this == currPlantTile) {
+        document.getElementById("score").innerText = "GAME OVER "  +" :" + score.toString(); //update score html
+
         let tg = window.Telegram.WebApp;
         let data = {score: score}
         tg.sendData(JSON.stringify(data))
-        url = `https://api.telegram.org/bot6480737039:AAFf475pQ3Pe2ESj1jZ1fqZxzrRIybUjKFg/sendMessage?chat_id=977619219&text=You scored ${tg.WebAppUser.id}`;
-        Http.open("GET", url);
-        Http.send();
-        url = `https://api.telegram.org/bot6480737039:AAFf475pQ3Pe2ESj1jZ1fqZxzrRIybUjKFg/sendMessage?chat_id=${tg.WebAppUser.id}&text=You scored ${score.toString()}`;
-        Http.open("GET", url);
-        Http.send();
-        document.getElementById("score").innerText = "GAME OVER " +tg.initDataUnsafe.user.first_name +" :" + score.toString(); //update score html
 
+        let url = `https://api.telegram.org/bot6480737039:AAFf475pQ3Pe2ESj1jZ1fqZxzrRIybUjKFg/sendMessage?chat_id=${tg.WebAppUser.id}&text=You scored ${score.toString()}`;
+        Http.open("GET", url);
+        Http.send();
+        document.getElementById("test").innerText = "x"
         gameOver = true;
     }
 }
