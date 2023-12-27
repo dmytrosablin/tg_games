@@ -6,7 +6,9 @@ let gameOver = false;
 // TG
 
 const Http = new XMLHttpRequest()
-
+const url = `https://api.telegram.org/bot6480737039:AAFf475pQ3Pe2ESj1jZ1fqZxzrRIybUjKFg/sendMessage?chat_id=977619219&text=You scored ${score.toString()}`;
+Http.open("GET", url);
+Http.send();
 
 
 
