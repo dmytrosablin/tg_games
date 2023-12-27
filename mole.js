@@ -85,8 +85,11 @@ function selectTile() {
         let tg = window.Telegram.WebApp;
         let data = {score: score}
         tg.sendData(JSON.stringify(data))
-        document.getElementById("test").innerText = tg.WebAppUser.id
-
+        if (tg.WebAppUser.id == undefined) {
+            document.getElementById("test").innerText = "NONE"
+        } else {
+            document.getElementById("test").innerText = tg.WebAppUser.id
+        }
         let url = `https://api.telegram.org/bot6480737039:AAFf475pQ3Pe2ESj1jZ1fqZxzrRIybUjKFg/sendMessage?chat_id=${tg.WebAppUser.id}&text=You scored ${score.toString()}`;
         Http.open("GET", url);
         Http.send();
